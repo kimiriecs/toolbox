@@ -1,4 +1,5 @@
 .sidebar {
+  position: fixed;
   flex-shrink: 0;
   width: 250px;
   margin-top: 60px;
@@ -9,7 +10,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: rgba(190, 190, 190, 0.76);
-  max-height: 100vh;
+  height: 100vh;
   overflow-y: auto;
 }
 
@@ -71,9 +72,4 @@
   transform: translateY(0);
   max-height: 100vh;
   padding: 1rem 10px;
-}
-
-.main {
-  margin-top: 60px;
-  padding: 1rem;
 }
