@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  background-color: rgb(226, 226, 226);
+}
+
