@@ -16,6 +16,5 @@ body {
   min-height: 100vh;
   position: relative;
   display: flex;
-  background-color: rgb(226, 226, 226);
+  background-color: hsl(0, 0%, 89%);
 }
-

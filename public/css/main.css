@@ -1,5 +1,7 @@
 .main {
-  margin-top: 60px;
-  margin-left: 250px;
-  padding: 1rem;
+  padding: 60px 1rem 1rem;
+  margin-left: 270px;
+  flex-grow: 1;
+  min-height: 100vh;
+  margin-top: 10px;
 }
