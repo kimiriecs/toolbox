@@ -1,5 +1,7 @@
 <?php
 
+use App\Modules\Product\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
