@@ -16,9 +16,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" }}>
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}" }}>
+    {{-- <link rel="stylesheet" href="{{ asset('css/main.css') }}" }}>
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" }}>
-    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}" }}>
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}" }}> --}}
 
     <title>{{ Str::of(config('app.name'))->title() }}</title>
 </head>

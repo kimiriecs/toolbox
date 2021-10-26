@@ -1,3 +1,5 @@
+
+
 const buttons = Array.from(document.querySelectorAll(".sidebar--button"));
 
 buttons.forEach((btn, index) => {
