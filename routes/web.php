@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Modules\Product\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -57,4 +58,36 @@ Route::prefix('form-components')->group(function () {
     Route::get('/inputs', function () { return view('formComponents.Inputs'); })->name('inputs');
     Route::get('/checkBoxes', function () { return view('formComponents.CheckBoxes'); })->name('checkBoxes');
     Route::get('/radioButtons', function () { return view('formComponents.RadioButtons'); })->name('radioButtons');
+});
+
+
+Route::prefix('users')->group(function () {
+
+    Route::get('/administration', function () { 
+        $administrators = User::whereHas('roles', function($q) {
+            $q->whereIn('roles.id', [1, 2]);
+        })->get();
+        return view('users.Administration', compact('administrators')); 
+    })->name('administration');
+
+    Route::get('/trainers', function () { 
+        $trainers = User::whereHas('roles', function($q) {
+            $q->whereIn('roles.id', [3]);
+        })->get();
+        return view('users.Trainers', compact('trainers')); 
+    })->name('trainers');
+
+    Route::get('/trainees', function () { 
+        $trainees = User::whereHas('roles', function($q) {
+            $q->whereIn('roles.id', [4]);
+        })->get();
+        return view('users.Trainees', compact('trainees')); 
+    })->name('trainees');
+
+    Route::get('/folowers', function () { 
+        $folowers = User::whereHas('roles', function($q) {
+            $q->whereIn('roles.id', [5]);
+        })->get();
+        return view('users.Folowers', compact('folowers')); 
+    })->name('folowers');
 });

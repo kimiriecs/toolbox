@@ -17,7 +17,7 @@ class RoleUserSeeder extends Seeder
      */
     public function run()
     {
-        // $roles = [ 'owner', 'admin', 'trainer', 'trainee', 'quest', ]; 
+        // $roles = [ 'owner', 'admin', 'trainer', 'trainee', 'folowers', ]; 
 
 
         $ownersCount = 1;
@@ -79,8 +79,8 @@ class RoleUserSeeder extends Seeder
             ]);
         }
 
-        // Create the trainees and guests
-        $traineesAndGuests = User::query()
+        // Create the trainees and folowers
+        $traineesAndFolowers = User::query()
                         ->where('id', '>', $lastTrainerId)
                         ->get();
 
@@ -88,16 +88,16 @@ class RoleUserSeeder extends Seeder
                         ->where('name', 'trainee')
                         ->first();
 
-        $guestRole = Role::query()
-                        ->where('name', 'guest')
+        $folowerRole = Role::query()
+                        ->where('name', 'folower')
                         ->first();
 
-        foreach ($traineesAndGuests as $user) {
+        foreach ($traineesAndFolowers as $user) {
             $roleId = '';
             if (rand(0, 1) > 0) {
                 $roleId = $traineeRole->id;
             } else {
-                $roleId = $guestRole->id;
+                $roleId = $folowerRole->id;
             }
             RoleUser::factory()->create([
                 'user_id' => $user->id,

@@ -72,3 +72,31 @@
      </div>
  </div>
  <!--  here Form Components Section ends -->
+
+ <!--  here Form Users Section starts -->
+ <div class="sidebar--section">
+     <h3 class="sidebar--button">Users
+         <svg xmlns="http://www.w3.org/2000/svg" class="sidebar--button-icon" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+         </svg>
+     </h3>
+     <div class="sidebar--content-container">
+
+         <div class="sidebar-link">
+             <a href="{{ route('administration') }}">Administration</a>
+         </div>
+         <div class="sidebar-link">
+             <a href="{{ route('trainers') }}">Trainers</a>
+         </div>
+         <div class="sidebar-link">
+             <a href="{{ route('trainees') }}">Trainees</a>
+         </div>
+         <div class="sidebar-link">
+             <a href="{{ route('folowers') }}">Folowers</a>
+         </div>
+
+         <hr class="sidebar-devider">
+     </div>
+ </div>
+ <!--  here Form Users Section ends -->

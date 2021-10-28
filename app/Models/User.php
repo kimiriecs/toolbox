@@ -56,6 +56,17 @@ class User extends Authenticatable
 
     }
 
+    /**
+     * Get the roles that user belongs to
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */    
+    public function administrators() {
+
+        return $this->belongsToMany(Role::class)->using(RoleUser::class)->wherePivotIn('role_id', [1, 2]);
+
+    }
+
 
     /**
      * Get the orders that belongs to the user
