@@ -1,0 +1,38 @@
+.table {
+    /* margin-left: auto;
+    margin-right: auto; */
+    table-layout: auto;
+    width: 100%;
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table--header {
+    background: rgb(197, 197, 197);
+}
+
+.table--header-row {
+
+}
+
+.table--header-cell  {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table--body {
+
+}
+
+.table--body-row {
+
+}
+
+.table--body-cell {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    vertical-align: middle;
+}

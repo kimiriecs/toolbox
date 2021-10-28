@@ -1,0 +1,40 @@
+.edit-buttot {
+    background-color: rgba(121, 167, 228, 0.74);
+    color: rgb(12, 12, 97);
+    border: 1px solid rgb(63, 63, 228);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.delete-buttot {
+    background-color: rgba(241, 161, 174, 0.74);
+    color: rgb(12, 12, 97);
+    border: 1px solid rgb(228, 63, 90);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.view-buttot {
+    background-color: rgba(139, 202, 163, 0.74);
+    color: rgb(12, 12, 97);
+    border: 1px solid rgb(63, 228, 187);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.edit-buttot:hover {
+    background-color: rgba(121, 167, 228, 0.95);
+    color: rgb(12, 12, 97);
+    border: 1px solid rgb(63, 63, 228);
+}
+
+.delete-buttot:hover {
+    background-color: rgba(241, 161, 174, 0.95);
+    color: rgb(12, 12, 97);
+    border: 1px solid rgb(228, 63, 90);
+}
+
+.view-buttot:hover {
+    background-color: rgba(139, 202, 163, 0.95);
+    color: rgb(12, 12, 97);
+    border: 1px solid rgb(63, 228, 187);
+}
