@@ -1,3 +1,25 @@
+ <!--  here Categories Section starts -->
+ <div class="sidebar--section">
+     <h3 class="sidebar--button">Categories
+         <svg xmlns="http://www.w3.org/2000/svg" class="sidebar--button-icon" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+         </svg>
+     </h3>
+     <div class="sidebar--content-container">
+         <div class="sidebar-link">
+             <a href="{{ route('all-categories') }}">all-categories</a>
+         </div>
+         <div class="sidebar-link">
+             <a href="{{ route('all-categories-with-children') }}">all-categories-with-children</a>
+         </div>
+         <hr class="sidebar-devider">
+     </div>
+ </div>
+ <!--  here Categories Section ends -->
+
+
+
  <!--  here Relationships Section starts -->
  <div class="sidebar--section">
      <h3 class="sidebar--button">Relationships
@@ -47,7 +69,7 @@
 
  <!--  here Form Components Section starts -->
  <div class="sidebar--section">
-     <h3 class="sidebar--button">Form Components
+     <h3 class="sidebar--button">UI Components
          <svg xmlns="http://www.w3.org/2000/svg" class="sidebar--button-icon" fill="none" viewBox="0 0 24 24"
              stroke="currentColor">
              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -55,6 +77,9 @@
      </h3>
      <div class="sidebar--content-container">
 
+         <div class="sidebar-link">
+             <a href="{{ route('buttons') }}">tables</a>
+         </div>
          <div class="sidebar-link">
              <a href="{{ route('buttons') }}">buttons</a>
          </div>

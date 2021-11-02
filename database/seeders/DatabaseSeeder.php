@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             OrderSeeder::class,
             ProductSeeder::class,
             ProductAnalogSeeder::class,
+            CategorySeeder::class,
 
         ]);
 
