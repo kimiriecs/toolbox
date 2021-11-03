@@ -6,6 +6,15 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+/**
+ * Default api route`
+ */
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
 Route::prefix('users')->group(function() {
     // Route::get('/{id}', [UserController::class, 'getUser']);
     Route::get('/trainees', [UserController::class, 'showAllTrainees']);
@@ -17,10 +26,3 @@ Route::prefix('users')->group(function() {
     Route::get('/', [UserController::class, 'showAll']);
 
 });
-
-/**
- * Default api route`
- */
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });

@@ -7,6 +7,19 @@
          </svg>
      </h3>
      <div class="sidebar--content-container">
+     @foreach ($categories as $category)
+     <div class="sidebar-link">
+         @if ($category->id == 1)
+            <a href="{{ route('category-nocategory') }}">{{ $category->name }}</a>
+        @else    
+            <a href="{{ route('category-' . $category->id-1) }}">{{ $category->name }}</a>
+        @endif
+    </div>
+    @endforeach
+     </div>
+                
+            
+     {{-- <div class="sidebar--content-container">
          <div class="sidebar-link">
              <a href="{{ route('all-categories') }}">all-categories</a>
          </div>
@@ -14,7 +27,7 @@
              <a href="{{ route('all-categories-with-children') }}">all-categories-with-children</a>
          </div>
          <hr class="sidebar-devider">
-     </div>
+     </div> --}}
  </div>
  <!--  here Categories Section ends -->
 
@@ -78,7 +91,7 @@
      <div class="sidebar--content-container">
 
          <div class="sidebar-link">
-             <a href="{{ route('buttons') }}">tables</a>
+             <a href="{{ route('tables') }}">tables</a>
          </div>
          <div class="sidebar-link">
              <a href="{{ route('buttons') }}">buttons</a>

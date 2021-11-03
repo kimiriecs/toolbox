@@ -41,12 +41,11 @@
 
     <!--  here Main Content Section starts -->
     <div class="main">
-        <h1>1. Need to implement "Work with Categories" logic !!!!!!!!!!!!!!</h1>
-        <hr>
+        <h1 class="">1. Replace UI experiments to the ToolBox !!!</h1>
         <br>
-        <h1 class="">2. Replace UI experiments to the ToolBox !!!</h1>
 
         @yield('content')
+        
     </div>
     <!--  here Main Content Section ends -->
 

@@ -4,7 +4,7 @@
 
     <ul>
 
-        {{-- @foreach ($categories as $category)
+        @foreach ($categories as $category)
 
             <li>
                 {{ $category->name }}
@@ -16,10 +16,7 @@
 
             </li>
 
-        @endforeach --}}
-
-
-        @eachRecursive($categories)
+        @endforeach
 
     </ul>
 

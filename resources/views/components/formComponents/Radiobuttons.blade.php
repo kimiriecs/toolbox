@@ -4,7 +4,7 @@
 @section('content')
 
     <div class="">
-        <h5>One-to-One</h5>
+        <h5>Radiobuttons</h5>
     </div>
     
 @endsection

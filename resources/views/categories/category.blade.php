@@ -1,17 +1,13 @@
-<ul style="margin-left: 1rem">
+@extends('layouts.app')
 
-    @foreach ($children as $child)
 
-    <li style="margin-left: 1rem">
+@section('content')
 
-        {{ $child->name }}
-
-        @includeWhen($child->children->count(), 'categories.category', ['children' => $child->children])
-
-        @includeUnless($child->children->count(), 'categories.noCategories')
-
-    </li>
-
-    @endforeach
-
-</ul>
+<br>
+<h3>Category name: {{ $categoryRealName }}</h3>
+<br>
+<h3>Current route name: {{ $message }}</h3>
+<br>
+<h3>Current route uri: {{ $currentPath }}</h3>
+    
+@endsection
