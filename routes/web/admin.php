@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\View;
 
 Route::prefix('admin')->group( function() {
 
-    $categories = Category::all();
+    $categories = Category::with(['parent','children'])->get();
 
     Route::get('/', function () use ($categories) {
 
@@ -31,15 +32,9 @@ Route::prefix('admin')->group( function() {
     
         foreach ($categories as $category) {
     
-            $categoryName = 'category-' . $category->id;
-            
-            if ($category->id == 1) {
-                $categoryName = 'category-nocategory';
-            } else {
-                $categoryName = 'category-' . $category->id-1;
-            }
+            $categoryName = $category->slug;
     
-            Route::get("/{$categoryName}", function () use ($categories, $category) {
+            Route::get("/{$categoryName}", function () use ($categories, $category, $categoryName) {
 
                 $categoryRealName = $category->name;
 

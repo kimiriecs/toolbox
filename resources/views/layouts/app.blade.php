@@ -41,7 +41,9 @@
 
     <!--  here Main Content Section starts -->
     <div class="main">
-        <h1 class="">1. Replace UI experiments to the ToolBox !!!</h1>
+        <h1 class="">1. Implement Category CRUD operations !!!</h1>
+        <br>
+        <h1 class="">2. Replace UI experiments to the ToolBox !!!</h1>
         <br>
 
         @yield('content')
