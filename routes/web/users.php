@@ -58,7 +58,7 @@ Route::prefix('users')->group(function () {
 
     })->name('trainees');
 
-    Route::get('/folowers', function () { 
+    Route::get('/folowers', function () use ($categories) { 
         $users = User::whereHas('roles', function($q) {
             $q->whereIn('roles.id', [5]);
         })->get();
@@ -67,7 +67,7 @@ Route::prefix('users')->group(function () {
 
         $columnsToRetrive = ['id', 'name', 'email'];
 
-        return view('users.ShowUsers', compact('users', 'columns', 'columnsToRetrive'));
+        return view('users.ShowUsers', compact('users', 'columns', 'columnsToRetrive', 'categories'));
 
     })->name('folowers');
 });

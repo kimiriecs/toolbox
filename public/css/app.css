@@ -1,26 +1,26 @@
-@import "./buttons.css";
-@import "./sidebar.css";
-@import "./navbar.css";
-@import "./main.css";
-
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-}
-
-html {
-  width: 100%;
-}
-
-body {
-  font-family: 'Nunito', sans-serif;
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  background-color: hsl(0, 0%, 89%);
-}
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    
+  }
+  
+  html {
+    width: 100%;
+  }
+  
+  body {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  
+  }
+  
+  .wrapper {
+    display: flex;
+    background-color: hsl(0, 0%, 89%);
+  }

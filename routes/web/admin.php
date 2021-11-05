@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Modules\Category\Controllers\CategoryController;
 use App\Modules\Category\Models\Category;
 use App\Modules\Product\Models\Product;
 use Illuminate\Support\Facades\DB;
@@ -25,10 +26,14 @@ Route::prefix('admin')->group( function() {
 
     Route::get('/', function () use ($categories) {
 
-        return view('layouts.app', compact('categories'));
-    });
+        return view('layouts.admin-layout', compact('categories'));
+        
+    })->name('dashboard');
 
     Route::prefix('categories')->group( function () use ($categories) {
+
+        Route::get('/', [CategoryController::class, 'index'])->name('all-categories');
+        Route::post('/create', [CategoryController::class, 'store'])->name('category-create');
     
         foreach ($categories as $category) {
     
@@ -45,7 +50,8 @@ Route::prefix('admin')->group( function() {
                 return view('categories.category', compact('categories','message', 'currentPath', 'categoryRealName'));
     
             })->name("$categoryName");
-    
+
+            
         }
     });
 });

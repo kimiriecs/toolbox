@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Modules\Product\Controllers;
+namespace App\Modules\Category\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Modules\Product\Models\Product;
+use App\Modules\Category\Models\Category;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+        return view('categories.categories', compact('categories'));
     }
 
     /**
@@ -36,16 +38,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $categoryData = $request->validate([
+        //     'name' => 'required|min:5|string',
+        //     'slug' => 'required|min:5|string',
+        //     'parent_id' => 'integer',
+        // ]);
+
+        $category = Category::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'parent_id' => $request->parent,
+        ]);
+        // $category = Category::create($categoryData);
+        // dd($category);
+        return redirect(route('all-categories'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Modules\Product\Models\Product  $product
+     * @param  \App\Modules\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Category $category)
     {
         //
     }
@@ -53,10 +68,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Modules\Product\Models\Product  $product
+     * @param  \App\Modules\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Category $category)
     {
         //
     }
@@ -65,10 +80,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Modules\Product\Models\Product  $product
+     * @param  \App\Modules\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -76,10 +91,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Modules\Product\Models\Product  $product
+     * @param  \App\Modules\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Category $category)
     {
         //
     }

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\View;
 
 // Route::get('/', function () {
 
-//     return view('layouts.app');
+//     return view('layouts.admin-layout');
 // });
 
 // Route::get('/login', function () {
@@ -42,7 +42,7 @@ use Illuminate\Support\Facades\View;
 
 //     Route::get('/', function () use ($categories) {
 
-//         return view('layouts.app', compact('categories'));
+//         return view('layouts.admin-layout', compact('categories'));
 //     });
 
 //     Route::prefix('categories')->group( function () use ($categories) {

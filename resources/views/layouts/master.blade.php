@@ -14,11 +14,11 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}" }}>
-    {{-- <link rel="stylesheet" href="{{ asset('css/main.css') }}" }}>
-    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" }}>
-    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}" }}> --}}
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
+    <!-- Individual Page Styles -->
+    @yield('style')
 
     <title>{{ Str::of(config('app.name'))->title() }}</title>
 </head>
@@ -31,22 +31,10 @@
     </div>
     <!--  here Navbar Section ends -->
 
-
-    <!--  here Sidebar Section starts -->
-    <div class="sidebar">
-        @include('layoutComponents.sidebar')
-    </div>
-    <!--  here Sidebar Section ends -->
-
-
     <!--  here Main Content Section starts -->
-    <div class="main">
-        <h1 class="">1. Implement Category CRUD operations !!!</h1>
-        <br>
-        <h1 class="">2. Replace UI experiments to the ToolBox !!!</h1>
-        <br>
+    <div class="wrapper">
 
-        @yield('content')
+        @yield('layout')
         
     </div>
     <!--  here Main Content Section ends -->

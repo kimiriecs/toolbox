@@ -30,3 +30,17 @@
   padding: 1rem 2rem;
   margin-right: 1rem;
 }
+
+.navbar-link a {
+  color: hsl(240, 52%, 5%);
+}
+
+.navbar-link a:visited {
+  color: hsl(240, 52%, 5%);
+}
+
+
+.navbar-link a:hover,
+.navbar-link a:active {
+  color: hsl(187, 76%, 29%);
+}
