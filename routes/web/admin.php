@@ -33,7 +33,9 @@ Route::prefix('admin')->group( function() {
     Route::prefix('categories')->group( function () use ($categories) {
 
         Route::get('/', [CategoryController::class, 'index'])->name('all-categories');
-        Route::post('/create', [CategoryController::class, 'store'])->name('category-create');
+        Route::get('/create', [CategoryController::class, 'create'])->name('category-create');
+        Route::get('{category}/sub-category-create', [CategoryController::class, 'createSubCategory'])->name('sub-category-create');
+        Route::post('/store', [CategoryController::class, 'store'])->name('category-store');
     
         foreach ($categories as $category) {
     

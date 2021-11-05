@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Modules\Category\Models\Category;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -44,6 +45,9 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::bind('role', function ($value) {
             return Role::where('id', $value)->orWhere('name', $value)->first();
+        });
+        Route::bind('category', function ($value) {
+            return Category::where('id', $value)->orWhere('slug', $value)->first();
         });
 
         $this->configureRateLimiting();

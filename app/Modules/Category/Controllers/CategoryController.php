@@ -27,7 +27,23 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::with('parent')->get();
+
+        return view('categories.create-category', compact('categories'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createSubCategory(Category $category)
+    {
+        
+        $categories = Category::with('parent')->get();
+
+
+        return view('categories.create-category', compact('categories', 'category'));
     }
 
     /**
