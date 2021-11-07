@@ -5,6 +5,7 @@ namespace App\Modules\Category\Controllers;
 use App\Http\Controllers\Controller;
 use App\Modules\Category\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -20,6 +21,7 @@ class CategoryController extends Controller
         return view('categories.categories', compact('categories'));
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -30,6 +32,29 @@ class CategoryController extends Controller
         $categories = Category::with('parent')->get();
 
         return view('categories.create-category', compact('categories'));
+    }
+
+    /**
+     * Create Root Category and Show the form for creating a new 'Start' resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function rootCategoryCreate(Request  $request)
+    {
+        // $rootCategory = new Category();
+
+        $rootCategory = Category::create([
+            'id' => 1,
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'parent_id' => null,
+        ]);
+
+        // $categories = Category::with('parent')->get();
+
+        // return view('categories.create-category', compact('categories'));
+        return redirect(route('category-create'));
     }
 
     /**

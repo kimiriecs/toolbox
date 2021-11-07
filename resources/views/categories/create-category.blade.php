@@ -58,8 +58,8 @@
                 @if (Route::is('sub-category-create'))
                     <option value="{{ $category->id }}" default>{{ ucfirst($category->name) }}</option>
                 @else
+                <option value="1" default>Root Category</option>
                     @foreach ($categories as $category)
-                        <option value="1" default>Root Category</option>
                         @if ($category->parent_id === 1)
                             <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
                         @endif
