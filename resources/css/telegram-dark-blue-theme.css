@@ -1,0 +1,45 @@
+:root {
+  --background-main: #0E1621;
+  --background-sidebar: #17212B;
+  --background-serch: #242F3D;
+  --background-right-sidebar-claim: #EC3942;
+  --background-right-sidebar-switch: #5288C1;
+  --background-right-sidebar-switch-button: #17212B;
+  --background-right-sidebar-devider-wide: #232E3C;
+  --background-right-sidebar-devider-thin: #101921;
+  --color-footer-input-telegram-icon: #5288C1;
+
+  --background-new-message-icon: #4082BC;
+  --color-new-message-icon-text: #FFFFFF;
+
+  --background-left-sidebar-scroll-hover: #3F4750;
+  --background-left-sidebar-scroll-button-hover: #9B9FA4;
+  --background-left-sidebar-chat-hover: #202B36;
+  --background-left-sidebar-chat-active: #2B5278;
+  --background-left-sidebar-chat-bell-icon: #3E546A;
+  --background-left-sidebar-chat-hover-bell-icon: #4D5762;
+  --background-left-sidebar-chat-active-bell-icon: #7AA3CA;
+  --background-left-sidebar-icons-hover: #25303E;
+  --color-left-sidebar-icons: #768C9E;
+  --color-left-sidebar-icons-active: #5EB5F7;
+
+  --background-header: #17212B;
+  --color-header-icons: #768C9E;
+  --color-header-icons-hover: #DCDCDC;
+  --color-header-icons-active: #6AB3F3;
+  --color-date: #FFFFFF;
+
+  --background-incoming: #182533;
+  --color-incoming: #F5F5F5;
+  --color-time-incoming: #6D7F8F;
+
+  --bacground-outcoming: #2B5278;
+  --color-outcoming: #E4ECF2;
+  --color-time-outcoming: #7DA8D3;
+  --color-checkbox-outcoming: #6BBFFF;
+
+  --color-post-icon: #6AB2F2;
+  --color-post-text: #F5F5F5;
+  --color-post-text-hightlighted: #6AB2F2;
+  --color-post-link-hover: #70BAF5;
+}
