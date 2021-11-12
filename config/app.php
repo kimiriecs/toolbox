@@ -172,9 +172,11 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
+        App\Modules\Category\Providers\CategoryRouteServiceProvider::class,
+        App\Modules\Category\Providers\CategoryServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
         App\Providers\MyBladeServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

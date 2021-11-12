@@ -6,32 +6,32 @@
     <div class="">
 
         <form action="{{ route('category-store') }}" method="POST" style="display:flex;
-                                    flex-direction:column;
-                                    justify-content:center;
-                                    align-items:center;
-                                    padding:5rem;
-                                    margin-top:1rem;
-                            ">
+                                                                        flex-direction:column;
+                                                                        justify-content:center;
+                                                                        align-items:center;
+                                                                        padding:5rem;
+                                                                        margin-top:1rem;
+                                                                        ">
             @csrf
 
             <input type="text" id="name" name="name" style="padding:1rem 2rem;
-                                                                margin-bottom:1rem;
-                                                                border-radius:0.5rem;
-                                                                border:none;
-                                                                outline:none;
-                                                                color:#8aa0ca;
-                                                                ">
+                                                            margin-bottom:1rem;
+                                                            border-radius:0.5rem;
+                                                            border:none;
+                                                            outline:none;
+                                                            color:#8aa0ca;
+                                                            ">
             <label for="name">Category Name</label>
 
 
 
             <input type="text" id="slug" name="slug" style="padding:1rem 2rem;
-                                                                margin-bottom:1rem;
-                                                                border-radius:0.5rem;
-                                                                border:none;
-                                                                outline:none;
-                                                                color:#8aa0ca;
-                                                                ">
+                                                            margin-bottom:1rem;
+                                                            border-radius:0.5rem;
+                                                            border:none;
+                                                            outline:none;
+                                                            color:#8aa0ca;
+                                                            ">
             <label for="name">Category Slug</label>
 
 
@@ -46,8 +46,7 @@
             <select
             {{-- <select disabled = "{!! Route::is('sub-category-create') ? true : false !!}" --}}
                     name="parent" id="parent" 
-                    style="
-                    /* appearance: none; */
+                    style=" /* appearance: none; */
                             padding:1rem 2rem;
                             margin-bottom:1rem;
                             border-radius:0.5rem;

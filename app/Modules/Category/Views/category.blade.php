@@ -7,8 +7,10 @@
 <h3>Category name: {{ $categoryRealName }}</h3>
 <br>
 <h3>Current route name: {{ $message }}</h3>
+<h3>Current route name: {{ Route::currentRouteName() }}</h3>
 <br>
 <h3>Current route uri: {{ $currentPath }}</h3>
+<h3>Current route uri: {{ Route::getCurrentRoute()->uri() }}</h3>
 
 <button style="width: 30%;
                 height: 40px;

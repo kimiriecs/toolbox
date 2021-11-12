@@ -7,17 +7,22 @@
 
 
  <!--  here Navbar Links Section ends -->
- @if (Route::has('dashboard'))
+ @if (Route::has('dashboard') && Route::is('dashboard'))
      <div class="navbar-link">
          <a href="{{ route('dashboard') }}">Dashboard</a>
      </div>
  @endif
- @if (Route::has('all-categories'))
+ @if (Route::has('site') && Route::is('dashboard'))
+     <div class="navbar-link">
+         <a href="{{ route('site') }}" target="_blank">Site</a>
+     </div>
+ @endif
+ @if (Route::has('all-categories') && Route::is('dashboard'))
      <div class="navbar-link">
          <a href="{{ route('all-categories') }}">Categories</a>
      </div>
  @endif
- @if (Route::has('home'))
+ @if (Route::has('home') && !Route::is('dashboard'))
      <div class="navbar-link">
          <a href="{{ route('home') }}">Home</a>
      </div>

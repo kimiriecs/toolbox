@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('categories.categories', compact('categories'));
+        return view('category::categories', compact('categories'));
     }
 
     
@@ -31,7 +31,7 @@ class CategoryController extends Controller
     {
         $categories = Category::with('parent')->get();
 
-        return view('categories.create-category', compact('categories'));
+        return view('category::create-category', compact('categories'));
     }
 
     /**
@@ -68,7 +68,7 @@ class CategoryController extends Controller
         $categories = Category::with('parent')->get();
 
 
-        return view('categories.create-category', compact('categories', 'category'));
+        return view('category::create-category', compact('categories', 'category'));
     }
 
     /**
