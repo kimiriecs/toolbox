@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\User;
-use App\Modules\Category\Controllers\CategoryController;
+use App\Modules\Category\Http\Controllers\CategoryController;
 use App\Modules\Category\Models\Category;
 use App\Modules\Product\Models\Product;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +26,7 @@ Route::prefix('categories')->group( function () use ($categories) {
 
     Route::get('/', [CategoryController::class, 'index'])->name('all-categories');
 
-    Route::post('/root-category-create', [CategoryController::class, 'rootCategoryCreate'])->name('root-category-create');
+    Route::get('/root-category-create', [CategoryController::class, 'rootCategoryCreate'])->name('root-category-create');
     
     Route::get('/create', [CategoryController::class, 'create'])->name('category-create');
 

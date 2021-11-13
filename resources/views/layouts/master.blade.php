@@ -16,6 +16,7 @@
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('accordion/accordion.css') }}">
     
     <!-- Individual Page Styles -->
     @yield('style')
@@ -40,6 +41,7 @@
     <!--  here Main Content Section ends -->
 
 
+    <script src="{{ asset('accordion/accordion.js') }}"></script>
     <script src="{{ asset('js/index.js') }}"></script>
 
 </body>

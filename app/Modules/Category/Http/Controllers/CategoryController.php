@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Category\Controllers;
+namespace App\Modules\Category\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Category\Models\Category;
@@ -40,14 +40,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function rootCategoryCreate(Request  $request)
+    public function rootCategoryCreate()
     {
         // $rootCategory = new Category();
 
         $rootCategory = Category::create([
             'id' => 1,
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
+            'name' => 'Root Category',
+            'slug' => Str::slug('Root Category'),
             'parent_id' => null,
         ]);
 
