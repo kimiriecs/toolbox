@@ -65,7 +65,7 @@ class CategoryController extends Controller
     public function createSubCategory(Category $category)
     {
         
-        $categories = Category::with('parent')->get();
+        $categories = $category::with('parent')->get();
 
 
         return view('category::create-category', compact('categories', 'category'));
@@ -91,7 +91,7 @@ class CategoryController extends Controller
             'parent_id' => $request->parent,
         ]);
         // $category = Category::create($categoryData);
-        // dd($category);
+
         return redirect(route('all-categories'));
     }
 
@@ -102,8 +102,14 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
+
     {
-        //
+        $categories = $category::all();
+        // dd($category->parent->slug . '::' . $category->slug . '.index');
+        $view = ($category->parent_id !== null && $category->parent_id !== 1) ? $category->parent->slug . '::' . $category->slug . '.index' : '';
+
+        // dd($view);
+        return view($view, compact('categories'));
     }
 
     /**

@@ -176,6 +176,8 @@ return [
         App\Modules\Category\Providers\CategoryServiceProvider::class,
         App\Providers\CustomBladeServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Modules\KanbanBoard\Providers\KanbanServiceProvider::class,
+        App\Modules\KanbanBoard\Providers\KanbanRouteServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
     ],

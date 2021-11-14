@@ -1,0 +1,127 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap'); */
+
+.kanban-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #2B2D35;
+  font-family: 'Nunito', sans-serif;
+  color: bisque;
+}
+.kanban-header {
+  display: flex;
+  flex: 1 0 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+}
+.kanban-title {
+  width: 100%;
+  border-bottom: 1px solid bisque;
+}
+.kanban-main {
+  display: flex;
+  flex-flow: wrap;
+  flex: 1 0 100%;
+  padding: 1rem;
+}
+.kanban-form-group {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: space-evenly;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  background-color: hsla(198, 17%, 32%, 0.205);
+}
+.kanban-form-group-input {
+  display: flex;
+  flex: auto;
+  margin-right: 1rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #42494d;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.kanban-form-group-button {
+  padding: 1rem;
+  background-color: rgb(55, 135, 150);
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.kanban-task-board {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+.kanban-task-list-wrapper {
+  display: flex;
+  flex: 0 1 32%;
+  flex-flow: column;
+}
+.kanban-task-list-title {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid bisque;
+}
+.kanban-task-list {
+  display: flex;
+  /* flex: 1 1 100%; */
+  flex: content;
+  flex-flow: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: hsla(198, 17%, 32%, 0.205);
+}
+.kanban-task {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(231, 189, 111, 0.767);
+  background-color: transparent;
+  line-height: 1.5;
+  cursor:pointer;
+}
+.kanban-task:not(:first-child) {
+  margin-top: 1rem;
+}
+.kanban-new .kanban-task {
+  background-color: hsla(24, 66%, 44%, 0.205);
+}
+.kanban-processed .kanban-task {
+  background-color: hsla(198, 71%, 38%, 0.205);
+}
+.kanban-finished .kanban-task {
+  background-color: hsla(110, 72%, 46%, 0.205);
+}
+
+.kanban-over {
+  background-color: hsla(198, 20%, 76%, 0.205);
+}
+.kanban-empty {
+  display: flex;
+  flex: content;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(168, 154, 126, 0.767);
+  background-color: transparent;
+  line-height: 1.5;
+  cursor: default;
+  color: brown;
+}

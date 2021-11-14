@@ -14,12 +14,14 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
 
+
     <!-- Global Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('accordion/accordion.css') }}">
-    
+
     <!-- Individual Page Styles -->
     @yield('style')
+    @yield('kanban-styles')
 
     <title>{{ Str::of(config('app.name'))->title() }}</title>
 </head>
@@ -36,13 +38,15 @@
     <div class="wrapper">
 
         @yield('layout')
-        
+
     </div>
     <!--  here Main Content Section ends -->
 
 
+    @yield('kanban-scripts')
     <script src="{{ asset('accordion/accordion.js') }}"></script>
     <script src="{{ asset('js/index.js') }}"></script>
+
 
 </body>
 

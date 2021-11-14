@@ -44,17 +44,24 @@ Route::prefix('categories')->group( function () use ($categories) {
 
         $categoryName = $category->slug;
 
-        Route::get("/{$categoryName}", function () use ($categories, $category, $categoryName) {
+        $categoryParentName = ($category->parent_id === null) ? null : $category->parent->slug ;
 
-            $categoryRealName = $category->name;
+        $uri = !$categoryParentName ? '' : ($category->parent_id === 1 ? '' : $categoryParentName);
+        // $uri = !$categoryParentName ? $categoryName : ($category->parent_id === 1 ? $categoryName : $categoryParentName . '/' . $categoryName);
 
-            $message = Route::currentRouteName();
+        Route::get("/$uri/{category}", [CategoryController::class, 'show'])->name("$categoryName");
+
+        // Route::get("/{$uri}", function () use ($categories, $category, $categoryName) {
+
+        //     $categoryRealName = $category->name;
+
+        //     $message = Route::currentRouteName();
             
-            $currentPath= Route::getCurrentRoute()->uri();
+        //     $currentPath= Route::getCurrentRoute()->uri();
 
-            return view('category::category', compact('categories','message', 'currentPath', 'categoryRealName'));
+        //     return view('category::category', compact('categories','message', 'currentPath', 'categoryRealName'));
 
-        })->name("$categoryName");
+        // })->name("$categoryName");
 
         
     }
