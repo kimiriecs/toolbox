@@ -174,8 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Modules\Category\Providers\CategoryRouteServiceProvider::class,
         App\Modules\Category\Providers\CategoryServiceProvider::class,
+        App\Providers\CustomBladeServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\MyBladeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
     ],

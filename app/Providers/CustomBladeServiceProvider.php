@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class MyBladeServiceProvider extends ServiceProvider
+class CustomBladeServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
