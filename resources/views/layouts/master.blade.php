@@ -20,6 +20,7 @@
     
 
     <!-- Individual Page Styles -->
+    @stack('home-layout-styles')
     @stack('admin-styles')
     @stack('accordion-styles')
     @stack('kanban-styles')

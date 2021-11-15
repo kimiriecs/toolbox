@@ -44,12 +44,19 @@ Route::prefix('categories')->group( function () use ($categories) {
 
         $categoryName = $category->slug;
 
-        $categoryParentName = ($category->parent_id === null) ? null : $category->parent->slug ;
+        $categoryParentName = ($category->parent_id === null) ? '' : $category->parent->slug ;
+        
+        $uri = $category->parent_id === null 
+            ? $categoryName 
+            : ($category->parent_id === 1 
+                ? $categoryName 
+                : $categoryParentName . '/' . $categoryName);
 
-        $uri = !$categoryParentName ? '' : ($category->parent_id === 1 ? '' : $categoryParentName);
-        // $uri = !$categoryParentName ? $categoryName : ($category->parent_id === 1 ? $categoryName : $categoryParentName . '/' . $categoryName);
+        Route::get("$uri", [CategoryController::class, 'show'])->name("$categoryName");
 
-        Route::get("/$uri/{category}", [CategoryController::class, 'show'])->name("$categoryName");
+
+
+
 
         // Route::get("/{$uri}", function () use ($categories, $category, $categoryName) {
 

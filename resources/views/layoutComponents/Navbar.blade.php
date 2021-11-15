@@ -5,38 +5,44 @@
  </div>
  <!--  here Navbar Logo Section ends -->
 
-
  <!--  here Navbar Links Section ends -->
- @if (Route::has('dashboard') && !Route::is('home'))
+
+ @if (Route::has('dashboard') && !Request::is('home*'))
      <div class="navbar-link">
          <a href="{{ route('dashboard') }}">Dashboard</a>
      </div>
  @endif
- @if (Route::has('site') && !Route::is('home'))
+
+ @if (Route::has('home') && !Request::is('home*'))
      <div class="navbar-link">
-         <a href="{{ route('site') }}" target="_blank">Site</a>
+         <a href="{{ route('home') }}" target="_blank">Site</a>
      </div>
  @endif
- @if (Route::has('all-categories') && !Route::is('home'))
+
+ @if (Route::has('all-categories') && !Request::is('home*') )
      <div class="navbar-link">
          <a href="{{ route('all-categories') }}">Categories</a>
      </div>
  @endif
- @if (Route::has('home') && !Route::is('dashboard'))
+
+ @if (Route::has('home') && !Request::is('admin*') )
      <div class="navbar-link">
          <a href="{{ route('home') }}">Home</a>
      </div>
  @endif
+
  @if (Route::has('login'))
      <div class="navbar-link">
          <a href="{{ route('login') }}">Login</a>
      </div>
  @endif
+
  @if (Route::has('register'))
      <div class="navbar-link">
          <a href="{{ route('register') }}">Register</a>
      </div>
  @endif
+
  @if (Route::has('logout'))
      <div class="navbar-link">
          <a href="{{ route('logout') }}">Logout</a>

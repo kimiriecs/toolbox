@@ -19,8 +19,8 @@
                         align-items:center;
                         ">
                 <span>
-                    <a href="{{ route($category->slug) }}" style="color: #8aa0ca;
-                                        ">
+                    <a href="{{ route($category->slug) }}" style="color: #8aa0ca;">
+                    {{-- <a href="{{ route($category->slug, ['categoryName' => $category->slug]) }}" style="color: #8aa0ca;"> --}}
                         {{ $category->name }}
                     </a>
                 </span>

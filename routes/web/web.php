@@ -39,4 +39,3 @@ Route::get('/logout', function () {
 Route::get('/home', function () {
     return view('pages.home.home');
 })->name('home');
-

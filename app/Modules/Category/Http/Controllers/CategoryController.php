@@ -104,9 +104,13 @@ class CategoryController extends Controller
     public function show(Category $category)
 
     {
+        dd($category);
         $categories = $category::all();
+
         // dd($category->parent->slug . '::' . $category->slug . '.index');
-        $view = ($category->parent_id !== null && $category->parent_id !== 1) ? $category->parent->slug . '::' . $category->slug . '.index' : '';
+        $view = ($category->parent_id !== null && $category->parent_id !== 1) 
+            ? $category->parent->slug . '::' . $category->slug . '.index' 
+            : '';
 
         // dd($view);
         return view($view, compact('categories'));
