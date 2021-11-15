@@ -110,12 +110,12 @@ function dropHandler(e) {
 //* Check for any taskList is empty
 
 function isEmptyTarget (el) {
-  if (el.classList.contains('emptyList')) {
-    el.classList.add('clear')
-    let emptyChild = document.querySelector('.clear li')
+  if (el.classList.contains('kanban-emptyList')) {
+    el.classList.add('kanban-clear')
+    let emptyChild = document.querySelector('.kanban-clear li')
     el.removeChild(emptyChild)
-    el.classList.remove('emptyList')
-    el.classList.remove('clear')
+    el.classList.remove('kanban-emptyList')
+    el.classList.remove('kanban-clear')
   }
 }
 function isEmptySource (el) {
@@ -124,7 +124,7 @@ function isEmptySource (el) {
     noTaskElement.classList.add('kanban-empty')
     noTaskElement.innerText = 'No Tasks'
     el.appendChild(noTaskElement)
-    el.classList.add('emptyList')
+    el.classList.add('kanban-emptyList')
   }
 }
 function isEmptyStart () {
@@ -134,7 +134,7 @@ function isEmptyStart () {
       noTaskElement.classList.add('kanban-empty')
       noTaskElement.innerText = 'No Tasks'
       list.appendChild(noTaskElement)
-      list.classList.add('emptyList')
+      list.classList.add('kanban-emptyList')
     }
   }
 }

@@ -17,11 +17,12 @@
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('accordion/accordion.css') }}">
+    
 
     <!-- Individual Page Styles -->
-    @yield('style')
-    @yield('kanban-styles')
+    @stack('admin-styles')
+    @stack('accordion-styles')
+    @stack('kanban-styles')
 
     <title>{{ Str::of(config('app.name'))->title() }}</title>
 </head>
@@ -43,8 +44,8 @@
     <!--  here Main Content Section ends -->
 
 
-    @yield('kanban-scripts')
-    <script src="{{ asset('accordion/accordion.js') }}"></script>
+    @stack('kanban-scripts')
+    @stack('accordion-scripts')
     <script src="{{ asset('js/index.js') }}"></script>
 
 

@@ -1,3 +1,11 @@
+@push('accordion-styles')
+    <link rel="stylesheet" href="{{ asset('accordion/accordion.css') }}">
+@endpush
+
+@push('accordion-scripts')
+    <script src="{{ asset('accordion/accordion.js') }}"></script>
+@endpush
+
 <div class="accordion">
 
     @foreach ($categories as $category)

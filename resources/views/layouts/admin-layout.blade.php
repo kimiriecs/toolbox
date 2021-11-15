@@ -1,13 +1,9 @@
 @extends('layouts.master')
 
 
-
-@section('style')
-
-    <!-- Styles -->
+@push('admin-styles')
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" }}>
-
-@endsection
+@endpush
 
 
 @section('layout')
@@ -21,8 +17,6 @@
 
     <!--  here Main Content Section starts -->
     <div class="main">
-
-        {{-- @include('notes') --}}
 
         @yield('content')
 
