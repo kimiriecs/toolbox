@@ -6,20 +6,20 @@
  <!--  here Navbar Logo Section ends -->
 
  <!--  here Navbar Links Section ends -->
-
- @if (Route::has('dashboard') && !Request::is('home*'))
+ 
+ @if (Route::has('dashboard') && !Request::is('home*') && !Request::is('/') && !Request::is('register*') && !Request::is('login*'))
      <div class="navbar-link">
          <a href="{{ route('dashboard') }}">Dashboard</a>
      </div>
  @endif
 
- @if (Route::has('home') && !Request::is('home*'))
+ @if (Route::has('home') && !Request::is('home*') && !Request::is('/') && !Request::is('register*') && !Request::is('login*'))
      <div class="navbar-link">
          <a href="{{ route('home') }}" target="_blank">Site</a>
      </div>
  @endif
 
- @if (Route::has('all-categories') && !Request::is('home*') )
+ @if (Route::has('all-categories') && !Request::is('home*') && !Request::is('/') && !Request::is('register*') && !Request::is('login*'))
      <div class="navbar-link">
          <a href="{{ route('all-categories') }}">Categories</a>
      </div>

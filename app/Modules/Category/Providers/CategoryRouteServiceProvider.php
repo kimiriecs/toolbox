@@ -49,10 +49,10 @@ class CategoryRouteServiceProvider extends ServiceProvider
             $this->loadRoutesFrom(__DIR__.'/../Routes/categories.php');
         });
 
-        Route::bind('categoryName', function ($value) {
+        Route::bind('category', function ($value) {
             return Category::where('id', $value)->orWhere('slug', $value)->first();
         });
-        Route::bind('categoryParentName', function ($value) {
+        Route::bind('subCategory', function ($value) {
             return Category::where('id', $value)->orWhere('slug', $value)->first();
         });
     }

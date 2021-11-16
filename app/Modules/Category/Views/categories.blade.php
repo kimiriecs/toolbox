@@ -19,8 +19,11 @@
                         align-items:center;
                         ">
                 <span>
-                    <a href="{{ route($category->slug) }}" style="color: #8aa0ca;">
-                    {{-- <a href="{{ route($category->slug, ['categoryName' => $category->slug]) }}" style="color: #8aa0ca;"> --}}
+                    @if ($category->parent_id === null || $category->parent_id === 1)
+                        <a href="{{ route('category-show', ['category' => $category->slug]) }}" style="color: #8aa0ca;">
+                    @else
+                        <a href="{{ route('category-show', ['category' => $category->parent->slug, 'subCategory' => $category->slug]) }}" style="color: #8aa0ca;">
+                    @endif
                         {{ $category->name }}
                     </a>
                 </span>

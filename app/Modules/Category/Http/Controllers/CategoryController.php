@@ -52,8 +52,8 @@ class CategoryController extends Controller
         ]);
 
         // $categories = Category::with('parent')->get();
-
         // return view('categories.create-category', compact('categories'));
+        
         return redirect(route('category-create'));
     }
 
@@ -85,12 +85,13 @@ class CategoryController extends Controller
         //     'parent_id' => 'integer',
         // ]);
 
+        // $category = Category::create($categoryData);
+        
         $category = Category::create([
             'name' => $request->name,
             'slug' => $request->slug,
             'parent_id' => $request->parent,
         ]);
-        // $category = Category::create($categoryData);
 
         return redirect(route('all-categories'));
     }
@@ -101,19 +102,20 @@ class CategoryController extends Controller
      * @param  \App\Modules\Category\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
-
+    public function show(Category $category, Category $subCategory = null)
     {
-        dd($category);
         $categories = $category::all();
 
-        // dd($category->parent->slug . '::' . $category->slug . '.index');
-        $view = ($category->parent_id !== null && $category->parent_id !== 1) 
-            ? $category->parent->slug . '::' . $category->slug . '.index' 
-            : '';
+        $view = $category === null 
+                    ? 'ERROR'
+                    : ($category->parent_id === null || ($category->parent_id === 1 && $subCategory === null) 
+                        ? 'category::category' 
+                        : ($subCategory === null || !view()->exists($category->slug . '::' . $subCategory->slug . '.index')
+                            ? 'category::category'
+                            : $category->slug . '::' . $subCategory->slug . '.index'
+                        ));
 
-        // dd($view);
-        return view($view, compact('categories'));
+        return view($view, compact('categories', 'category'));
     }
 
     /**

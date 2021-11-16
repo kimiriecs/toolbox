@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\View;
 
 
 Route::get('/', function () {
-
     return view('layouts.home-layout');
 })->name('welcome');
 
@@ -28,8 +27,8 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/register', function () {
-    return view('pages.home.home');
     // return view('register');
+    return view('pages.home.home');
 })->name('register');
 
 Route::get('/logout', function () {
