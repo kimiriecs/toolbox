@@ -26,13 +26,13 @@ Route::prefix('categories')->group( function () use ($categories) {
 
     Route::get('/', [CategoryController::class, 'index'])->name('all-categories');
 
-    Route::get('/{category}/{subCategory?}', [CategoryController::class, 'show'])->name('category-show');
-    
     Route::get('/root-category-create', [CategoryController::class, 'rootCategoryCreate'])->name('root-category-create');
     
     Route::get('/create', [CategoryController::class, 'create'])->name('category-create');
     
     Route::get('{category}/sub-category-create', [CategoryController::class, 'createSubCategory'])->name('sub-category-create');
+    
+    Route::get('/{category}/{subCategory?}', [CategoryController::class, 'show'])->name('category-show');
     
     Route::post('/store', [CategoryController::class, 'store'])->name('category-store');
 

@@ -5,6 +5,7 @@ namespace App\Modules\Category\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Modules\Category\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
@@ -115,7 +116,11 @@ class CategoryController extends Controller
                             : $category->slug . '::' . $subCategory->slug . '.index'
                         ));
 
-        return view($view, compact('categories', 'category'));
+        if ($subCategory !== null && Route::has($subCategory->slug)) {
+            return redirect()->route($subCategory->slug);
+        } else {
+            return view($view, compact('categories', 'category'));
+        }
     }
 
     /**
