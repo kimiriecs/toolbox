@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Models\Role;
-use App\Models\User;
-// use App\Modules\Category\Models\Category;
+use App\Modules\Users\Models\Role;
+use App\Modules\Users\Models\User;
+// use App\Modules\Categories\Models\Category;
 // use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;

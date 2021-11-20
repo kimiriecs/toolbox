@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Modules\Category\Database\Seeders\CategorySeeder;
+use App\Modules\Categories\Database\Seeders\CategorySeeder;
+use App\Modules\Users\Database\Seeders\UserSeeder;
+use App\Modules\Users\Database\Seeders\RoleSeeder;
+use App\Modules\Users\Database\Seeders\RoleUserSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

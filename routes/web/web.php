@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\User;
-use App\Modules\Category\Models\Category;
+use App\Modules\Users\Models\User;
+use App\Modules\Categories\Models\Category;
 use App\Modules\Product\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;

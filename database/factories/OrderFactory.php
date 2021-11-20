@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Order;
-use App\Models\User;
+use App\Modules\Users\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderFactory extends Factory

@@ -9,7 +9,7 @@
  
  @if (Route::has('dashboard') && !Request::is('home*') && !Request::is('/') && !Request::is('register*') && !Request::is('login*'))
      <div class="navbar-link">
-         <a href="{{ route('dashboard') }}">Dashboard</a>
+         <a href="{{ route('dashboard', ['category' => 'dashboard', 'subCategory' => 'main']) }}">Dashboard</a>
      </div>
  @endif
 

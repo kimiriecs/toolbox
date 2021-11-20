@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\User;
-use App\Modules\Category\Models\Category;
+use App\Modules\Users\Models\User;
+use App\Modules\Categories\Models\Category;
 use App\Modules\Product\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -15,25 +15,42 @@ use Illuminate\Support\Facades\View;
 |
 */
 
-Route::prefix('form-components')->group(function () {
+// Route::prefix('form-components')->group(function () {
 
-    $categories = Category::all();
+//     $categories = Category::all();
 
-    Route::get('/buttons', function () use ($categories) { return view('components.formComponents.Buttons', compact('categories')); })->name('buttons');
-    Route::get('/inputs', function () use ($categories) { return view('components.formComponents.Inputs', compact('categories')); })->name('inputs');
-    Route::get('/checkBoxes', function () use ($categories) { return view('components.formComponents.CheckBoxes', compact('categories')); })->name('checkBoxes');
-    Route::get('/radioButtons', function () use ($categories) { return view('components.formComponents.RadioButtons', compact('categories')); })->name('radioButtons');
+//     Route::get('/buttons', function () use ($categories) { 
+//         $componentName = 'formComponents.buttons-component';
+//         $data = [];
+//         return view('layouts.admin-layout', compact('categories', 'componentName', 'data')); 
+//     })->name('buttons');
+
+//     Route::get('/inputs', function () use ($categories) { 
+//         return view('components.formComponents.Inputs', compact('categories')); 
+//     })->name('inputs');
+
+//     Route::get('/checkBoxes', function () use ($categories) { 
+//         return view('components.formComponents.CheckBoxes', compact('categories')); 
+//     })->name('checkBoxes');
+
+//     Route::get('/radioButtons', function () use ($categories) { 
+//         return view('components.formComponents.RadioButtons', compact('categories')); 
+//     })->name('radioButtons');
     
-    Route::get('/tables', function () use ($categories) { 
+//     Route::get('/tables', function () use ($categories) { 
 
-        $users = User::whereHas('roles', function($q) {
-            $q->whereIn('roles.id', [1, 2]);
-        })->get();
+//         $users = User::whereHas('roles', function($q) {
+//             $q->whereIn('roles.id', [1, 2]);
+//         })->get();
 
-        $columns = DB::getSchemaBuilder()->getColumnListing('users');
+//         $columns = DB::getSchemaBuilder()->getColumnListing('users');
 
-        $columnsToRetrive = ['id', 'name', 'email'];
+//         $columnsToRetrive = ['id', 'name', 'email'];
+
+//         $componentName = 'tables-component';
+
+//         $data = compact('users', 'columns', 'columnsToRetrive');
     
-        return view('components.Tables', compact('users', 'columns', 'columnsToRetrive', 'categories'));
-    })->name('tables');
-});
+//         return view('layouts.admin-layout', compact('categories', 'componentName', 'data'));
+//     })->name('tables');
+// });

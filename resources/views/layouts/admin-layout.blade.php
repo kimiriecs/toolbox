@@ -18,7 +18,13 @@
     <!--  here Main Content Section starts -->
     <div class="main">
 
-        @yield('content')
+        {{-- @if (Request::is('admin/categories') || Request::is('admin/categories/*create'))
+            @yield('content')
+        @else
+            <x-dynamic-component :component="$componentName" :data="$data" class="mt-4" />
+        @endif --}}
+            
+            <x-dynamic-component :component="$componentName" :data="$data" class="mt-4" />
 
     </div>
     <!--  here Main Content Section ends -->

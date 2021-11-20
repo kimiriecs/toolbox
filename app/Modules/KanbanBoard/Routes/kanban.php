@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Modules\Users\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
