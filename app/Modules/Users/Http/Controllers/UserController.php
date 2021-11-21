@@ -1,14 +1,24 @@
 <?php
 
-namespace App\Modules\Users\Http\Controllers;
+namespace Modules\Users\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Modules\Users\Models\Role;
-use App\Modules\Users\Models\User;
+use Modules\Users\Models\Role;
+use Modules\Users\Models\User;
 use Illuminate\Http\Request;
+use Modules\Categories\Models\Category;
+use Modules\Users\Repositories\UserRepositoryInterface;
+
 
 class UserController extends Controller
 {
+    protected $repository;
+
+    public function __construct(UserRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,40 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = $this->repository->getUsers();
+
+        $columns = $this->repository->getColumns();
+
+        $componentName = 'users::all-users-component';
+
+        $categories = $this->repository->getAllCategories();
+
+        $data = compact('users', 'columns');
+            
+        return view('layouts.admin-layout', compact('categories', 'componentName', 'data'));
+
+    }
+
+    /**
+     * Display a listing of the users depending on the user role.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function subCategoryIndex(Category $subCategory = null)
+    {
+
+        $users = $this->repository->getUsers($subCategory);
+
+        $columns = $this->repository->getColumns();
+
+        $componentName = 'users::' . $subCategory->slug . '-component';
+
+        $categories = $this->repository->getAllCategories();
+
+        $data = compact('users', 'columns');
+            
+        return view('layouts.admin-layout', compact('categories', 'componentName', 'data'));
+
     }
 
 

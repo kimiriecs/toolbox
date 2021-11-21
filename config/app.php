@@ -176,25 +176,25 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // Custom ServiceProviders
-        App\Modules\Categories\Providers\CategoryRouteServiceProvider::class,
-        App\Modules\Categories\Providers\CategoryServiceProvider::class,
+        Modules\Categories\Providers\CategoryRouteServiceProvider::class,
+        Modules\Categories\Providers\CategoryServiceProvider::class,
 
         App\Providers\CustomBladeServiceProvider::class,
         
-        App\Modules\Dashboard\Providers\DashboardServiceProvider::class,
-        App\Modules\Dashboard\Providers\DashboardRouteServiceProvider::class,
+        Modules\Dashboard\Providers\DashboardServiceProvider::class,
+        Modules\Dashboard\Providers\DashboardRouteServiceProvider::class,
 
-        App\Modules\Relationships\Providers\RelationshipServiceProvider::class,
-        App\Modules\Relationships\Providers\RelationshipRouteServiceProvider::class,
+        Modules\Relationships\Providers\RelationshipServiceProvider::class,
+        Modules\Relationships\Providers\RelationshipRouteServiceProvider::class,
 
-        App\Modules\UIComponents\Providers\UIComponentServiceProvider::class,
-        App\Modules\UIComponents\Providers\UIComponentRouteServiceProvider::class,
+        Modules\UIComponents\Providers\UIComponentServiceProvider::class,
+        Modules\UIComponents\Providers\UIComponentRouteServiceProvider::class,
         
-        App\Modules\Users\Providers\UserServiceProvider::class,
-        App\Modules\Users\Providers\UserRouteServiceProvider::class,
+        Modules\Users\Providers\UserServiceProvider::class,
+        Modules\Users\Providers\UserRouteServiceProvider::class,
 
-        App\Modules\KanbanBoard\Providers\KanbanServiceProvider::class,
-        App\Modules\KanbanBoard\Providers\KanbanRouteServiceProvider::class,
+        Modules\KanbanBoard\Providers\KanbanServiceProvider::class,
+        Modules\KanbanBoard\Providers\KanbanRouteServiceProvider::class,
     ],
 
     /*

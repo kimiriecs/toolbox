@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Categories\Providers;
+namespace Modules\Categories\Providers;
 
-use App\Modules\Categories\Models\Category;
+use Modules\Categories\Models\Category;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -45,7 +45,6 @@ class CategoryRouteServiceProvider extends ServiceProvider
     protected function registerRoutes()
     {
         Route::group($this->routeConfiguration(), function () {
-            $this->loadRoutesFrom(__DIR__.'/../Routes/dashboard.php');
             $this->loadRoutesFrom(__DIR__.'/../Routes/categories.php');
         });
 

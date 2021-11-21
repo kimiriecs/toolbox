@@ -12,16 +12,16 @@
 
         @if ($category->parent && $category->parent->id === 1)
 
-            <x-category::accordion.item :category="$category">
+            <x-categories::accordion.item :category="$category">
 
                 @if ($category->children->count())
-                    <x-category::accordion.item-content :category="$category" />
-                    <x-category::accordion.add-new-sub-category :category="$category" />
+                    <x-categories::accordion.item-content :category="$category" />
+                    <x-categories::accordion.add-new-sub-category :category="$category" />
                 @else
-                    <x-category::accordion.add-new-sub-category :category="$category" />
+                    <x-categories::accordion.add-new-sub-category :category="$category" />
                 @endif
 
-            </x-category::accordion.item>
+            </x-categories::accordion.item>
 
         @endif
 

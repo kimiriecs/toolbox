@@ -1,6 +1,6 @@
 <div class="accordion--link-container">
   <a class="accordion--link"
-      href="{{ route('sub-category-create', ['category' => $category->slug]) }}">
+      href="{{ route('subCategory.create', ['category' => $category->slug]) }}">
       add sub-category
       <svg xmlns="http://www.w3.org/2000/svg" class="accordion--link-icon" fill="none"
           viewBox="0 0 24 24" stroke="currentColor">

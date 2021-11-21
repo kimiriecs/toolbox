@@ -1,10 +1,10 @@
 <?php
 
-namespace Database\Seeders;
+namespace Modules\Users\Database\Seeders;
 
-use App\Modules\Users\Models\Role;
-use App\Modules\Users\Models\RoleUser;
-use App\Modules\Users\Models\User;
+use Modules\Users\Models\Role;
+use Modules\Users\Models\RoleUser;
+use Modules\Users\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 

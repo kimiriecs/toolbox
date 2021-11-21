@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Categories\Models;
+namespace Modules\Categories\Models;
 
 
 
-use App\Modules\Categories\Database\Factories\CategoryFactory;
+use Modules\Categories\Database\Factories\CategoryFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

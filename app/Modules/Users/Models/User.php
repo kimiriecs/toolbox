@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Users\Models;
+namespace Modules\Users\Models;
 
-use App\Traits\HasRole;
+use Modules\Users\Traits\HasRole;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;

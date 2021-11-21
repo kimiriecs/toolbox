@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Dashboard\Providers;
+namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

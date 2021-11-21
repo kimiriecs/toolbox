@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\KanbanBoard\Providers;
+namespace Modules\KanbanBoard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

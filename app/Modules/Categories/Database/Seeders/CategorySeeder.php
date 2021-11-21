@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Categories\Database\Seeders;
+namespace Modules\Categories\Database\Seeders;
 
-use App\Modules\Categories\Models\Category;
+use Modules\Categories\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Traits;
+namespace Modules\Users\Traits;
 
-use App\Modules\Users\Models\Role;
-use App\Modules\Users\Models\User;
+use Modules\Users\Models\Role;
+use Modules\Users\Models\User;
 
 
 /**

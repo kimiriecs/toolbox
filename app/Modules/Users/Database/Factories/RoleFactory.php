@@ -1,8 +1,8 @@
 <?php
 
-namespace Database\Factories;
+namespace Modules\Users\Database\Factories;
 
-use App\Modules\Users\Models\Role;
+use Modules\Users\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RoleFactory extends Factory

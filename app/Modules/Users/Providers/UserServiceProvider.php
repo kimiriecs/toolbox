@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Modules\Users\Providers;
+namespace Modules\Users\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
-
-
+use Modules\Users\Repositories\UserRepository;
+use Modules\Users\Repositories\UserRepositoryInterface;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -17,6 +16,13 @@ class UserServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../Config/config.php', 'users');
+
+
+        $this->app->bind(
+            UserRepositoryInterface::class, 
+            UserRepository::class
+        );
+
     }
 
     /**

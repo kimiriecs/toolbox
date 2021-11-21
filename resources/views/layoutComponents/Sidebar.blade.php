@@ -1,9 +1,9 @@
 <!--  Sidebar starts here -->
 @if ($categories->count() > 1)
 
-    <x-category::accordion.index :categories="$categories" />
+    <x-categories::accordion.index :categories="$categories" />
                 
-    <x-category::accordion.add-new-category />
+    <x-categories::accordion.add-new-category />
     
 @elseif($categories->count() === 1 )
 
@@ -11,8 +11,8 @@
     then show form for creating Start category 
     whith RootCategory as 'Parent'
     Then creating category by sending POST request 
-    to the route('category-create') -->
-    <x-category::accordion.add-first-category />
+    to the route('category.create') -->
+    <x-categories::accordion.add-first-category />
     
 @else
 
@@ -21,8 +21,8 @@
     and then show form for creating Start category 
     whith RootCategory as 'Parent' 
     Then creating category by sending POST request 
-    to the route('category-create') -->
-    <x-category::accordion.add-root-category />
+    to the route('category.create') -->
+    <x-categories::accordion.add-root-category />
 
 @endif
 

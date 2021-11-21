@@ -5,9 +5,9 @@
         <thead class="table--header">
             <tr class="table--header-row">
                 @foreach ($data['columns'] as $col)
-                    @if (in_array($col, $data['columnsToRetrive']))
-                        <th class="table--header-cell">{{ ucfirst($col) }}</th>
-                    @endif
+                <th class="table--header-cell">{{ ucfirst($col) }}</th>
+                    {{-- @if (in_array($col, $data['columnsToRetrive']))
+                    @endif --}}
                 @endforeach
                 <th class="table--header-cell">Role</th>
                 <th class="table--header-cell">Actions</th>
@@ -18,9 +18,9 @@
 
                 <tr class="table--body-row">
                     @foreach ($data['columns'] as $col)
-                        @if (in_array($col, $data['columnsToRetrive']))
-                            <td class="table--body-cell">{{ ucfirst($user->$col) }}</td>
-                        @endif
+                    <td class="table--body-cell">{{ ucfirst($user->$col) }}</td>
+                        {{-- @if (in_array($col, $data['columnsToRetrive']))
+                        @endif --}}
                     @endforeach
                     <td class="table--body-cell">
                         @foreach ($user->roles as $role)

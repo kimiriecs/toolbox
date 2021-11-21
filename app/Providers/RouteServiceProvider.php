@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Modules\Users\Models\Role;
-use App\Modules\Users\Models\User;
-// use App\Modules\Categories\Models\Category;
+use Modules\Users\Models\Role;
+use Modules\Users\Models\User;
+// use \Modules\Categories\Models\Category;
 // use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -63,17 +63,17 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web/web.php'));
 
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/web/users.php'));
+            // Route::middleware('web')
+            //     ->namespace($this->namespace)
+            //     ->group(base_path('routes/web/users.php'));
 
-            Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/web/relationships.php'));
+            // Route::middleware('web')
+            // ->namespace($this->namespace)
+            // ->group(base_path('routes/web/relationships.php'));
             
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/web/components.php'));
+            // Route::middleware('web')
+            //     ->namespace($this->namespace)
+            //     ->group(base_path('routes/web/components.php'));
         });
     }
 

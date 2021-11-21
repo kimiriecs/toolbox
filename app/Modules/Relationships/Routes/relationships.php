@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
+use Modules\Relationships\Http\Controllers\RelationshipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,10 @@ use Illuminate\Support\Str;
 
 // ============= Relationship routes start here ================
 
+Route::prefix('relationships')
+  ->name('relationships.')
+  ->group(function () {
+
+    Route::get('/{subCategory?}', [RelationshipController::class, 'subCategoryIndex'])->name('subCategory.index');
+    
+});

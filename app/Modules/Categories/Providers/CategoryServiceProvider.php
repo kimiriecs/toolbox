@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Categories\Providers;
+namespace Modules\Categories\Providers;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -30,7 +30,7 @@ class CategoryServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
-              __DIR__.'/../Config/config.php' => config_path('category.php'),
+              __DIR__.'/../Config/config.php' => config_path('categories.php'),
             ], 'config');
         
         }
@@ -38,7 +38,7 @@ class CategoryServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
 
-        $this->loadViewsFrom(__DIR__.'/../Views', 'category');
+        $this->loadViewsFrom(__DIR__.'/../Views', 'categories');
 
     }
 

@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Modules\Categories\Http\Controllers;
+namespace Modules\Categories\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Modules\Users\Models\User;
-use App\Modules\Categories\Models\Category;
+use Modules\Categories\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
@@ -21,7 +18,8 @@ class CategoryController extends Controller
     {
         $categories = Category::with('parent')->get();
 
-        $componentName = 'category::all-categories-component';
+        $componentName = 'categories::all-categories-component';
+
         $data = compact('categories');
 
         return view('layouts.admin-layout', compact('categories', 'componentName', 'data'));
@@ -37,10 +35,10 @@ class CategoryController extends Controller
     {
         $categories = Category::with('parent')->get();
 
-        $componentName = 'category::create-category-component';
+        $componentName = 'categories::create-category-component';
+
         $data = compact('categories');
 
-        // return view('category::create-category', compact('categories'));
         return view('layouts.admin-layout', compact('categories', 'componentName', 'data'));
     }
 
@@ -52,7 +50,6 @@ class CategoryController extends Controller
      */
     public function rootCategoryCreate()
     {
-        // $rootCategory = new Category();
 
         $rootCategory = Category::create([
             'id' => 1,
@@ -60,11 +57,8 @@ class CategoryController extends Controller
             'slug' => Str::slug('Root Category'),
             'parent_id' => null,
         ]);
-
-        // $categories = Category::with('parent')->get();
-        // return view('categories.create-category', compact('categories'));
         
-        return redirect(route('category-create'));
+        return redirect()->route('category.create');
     }
 
     /**
@@ -77,10 +71,9 @@ class CategoryController extends Controller
         
         $categories = Category::with('parent')->get();
 
-        $componentName = 'category::create-category-component';
+        $componentName = 'categories::create-category-component';
         $data = compact('categories', 'category');
 
-        // return view('category::create-category', compact('categories', 'category'));
         return view('layouts.admin-layout', compact('categories', 'componentName', 'data'));
     }
 
@@ -106,18 +99,18 @@ class CategoryController extends Controller
             'parent_id' => $request->parent,
         ]);
 
-        return redirect(route('all-categories'));
+        return redirect()->route('all-categories');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Modules\Categories\Models\Category  $category
+     * @param  \Modules\Categories\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category, Category $subCategory = null)
+    public function showRedirect(Category $category, Category $subCategory = null)
     {
-        $categories = $category::all();
+    /* $categories = $category::all();
 
         $view = $category === null 
                     ? 'ERROR'
@@ -150,12 +143,36 @@ class CategoryController extends Controller
             return view($view, compact('categories', 'category'));
 
         }
+
+
+
+        if ($subCategory !== null) {
+
+            return redirect()->route($category->slug . 'show', ['category' => $category, 'subCategory' => $subCategory]);
+
+        } else {
+
+            return redirect()->route($category->slug . 'show');
+
+        }
+    */
+
+        if ($subCategory !== null) {
+
+            return redirect()->route($category->slug . '.' . 'subCategory.index', ['subCategory' => $subCategory->slug]);
+
+        } else {
+
+            return redirect()->route($category->slug . '.' . 'index');
+
+        }
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Modules\Categories\Models\Category  $category
+     * @param  \Modules\Categories\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function edit(Category $category)
@@ -167,7 +184,7 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Modules\Categories\Models\Category  $category
+     * @param  \Modules\Categories\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
@@ -178,7 +195,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Modules\Categories\Models\Category  $category
+     * @param  \Modules\Categories\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
