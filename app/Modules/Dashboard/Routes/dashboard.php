@@ -1,11 +1,6 @@
 <?php
 
-use App\Models\Dashboard;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Str;
 use Modules\Dashboard\Http\Controllers\DashboardController;
 
 /*
@@ -19,9 +14,9 @@ use Modules\Dashboard\Http\Controllers\DashboardController;
 // ============= Dashboard routes start here ================
 
 Route::prefix('dashboard')
-  ->name('dashboard.')
+  ->name('admin.dashboard.')
   ->group(function () {
 
-    Route::get('/{subCategory?}', [DashboardController::class, 'subCategoryIndex'])->name('subCategory.index');
+    Route::get('/{subCategory?}', [DashboardController::class, 'subCategoryIndex'])->name('subcategory.index');
     
 });

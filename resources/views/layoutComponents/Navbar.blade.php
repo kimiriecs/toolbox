@@ -7,9 +7,9 @@
 
  <!--  here Navbar Links Section ends -->
  
- @if (Route::has('dashboard') && !Request::is('home*') && !Request::is('/') && !Request::is('register*') && !Request::is('login*'))
+ @if (Route::has('admin.dashboard.subcategory.index') && !Request::is('home*') && !Request::is('/') && !Request::is('register*') && !Request::is('login*'))
      <div class="navbar-link">
-         <a href="{{ route('dashboard', ['category' => 'dashboard', 'subCategory' => 'main']) }}">Dashboard</a>
+         <a href="{{ route('admin.dashboard.subcategory.index') }}">Dashboard</a>
      </div>
  @endif
 

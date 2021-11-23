@@ -1,25 +1,22 @@
 <?php
 
-use Modules\Users\Models\User;
-use Modules\Categories\Models\Category;
-use App\Modules\Product\Models\Product;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\View;
 use Modules\UIComponents\Http\Controllers\UIComponentController;
 
 /*
 |--------------------------------------------------------------------------
-| Components Routes
+| UIComponents Routes
 |--------------------------------------------------------------------------
 |
 */
 
+
+// ============= UIComponents routes start here ================
+
 Route::prefix('ui-components')
-  ->as('ui-components.')
+  ->as('admin.ui-components.')
   ->group(function () {
 
-    Route::get('/{subCategory?}', [UIComponentController::class, 'subCategoryIndex'])->name('subCategory.index');
+    Route::get('/{subCategory}', [UIComponentController::class, 'subCategoryIndex'])->name('subcategory.index');
     
 });

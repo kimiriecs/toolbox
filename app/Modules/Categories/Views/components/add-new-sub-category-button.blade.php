@@ -1,9 +1,6 @@
-<!-- If there are no yet categories send POST reques for creating RootCategory and then show form for creating Start category whith RootCategory as 'Parent' -->
-<!-- Then creating category by sending POST request to the route('category.create') -->
-
 <div class="accordion--link-container">
-    <a class="accordion--link" href="{{ route('rootCategory.create') }}">
-        add first category
+    <a class="accordion--link" href="{{ route('subCategory.create', ['category' => $category->slug]) }}">
+        add sub-category
         <svg xmlns="http://www.w3.org/2000/svg" class="accordion--link-icon" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -11,3 +8,4 @@
         </svg>
     </a>
 </div>
+

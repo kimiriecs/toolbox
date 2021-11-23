@@ -28,7 +28,7 @@ class DashboardController extends Controller
 
         } else {
 
-            $componentName = 'categories::dummy-category-component';
+            $componentName = 'dashboard::main-component';
 
             return view('layouts.admin-layout', compact('categories', 'componentName', 'data'));
 
