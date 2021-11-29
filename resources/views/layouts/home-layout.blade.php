@@ -14,8 +14,6 @@
 <!--  here Main Content Section starts -->
 <div class="main">
 
-    @include('notes')
-
     @yield('content')
     
 </div>
